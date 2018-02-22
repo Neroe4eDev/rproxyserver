@@ -1,12 +1,11 @@
 from django.conf.urls import include, url
 from django.contrib import admin
-from proxyapp.views import TestProxyView
+from proxyapp.views import TestProxyView, NormalView
 
 urlpatterns = [
-    # Examples:
-    # url(r'^$', 'rproxyserver.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^(?P<path>.*)$', TestProxyView.as_view()),
+    # url(r'^/', include(proxyapp.urls)),
+    url(r'^index/(?P<path>.*)$', TestProxyView.as_view(), name='index-url'),
+    # url(r'^(?P<path>.*)/header/$', NormalView.as_view(), name='normal-url'),
+    url(r'^header/$', NormalView.as_view(), name='normal-url'),
 ]
