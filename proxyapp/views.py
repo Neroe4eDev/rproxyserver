@@ -6,7 +6,7 @@ from django.views.generic import View
 
 class TestProxyView(ProxyView):
     
-    upstream = "http://example.com"
+    upstream = "http://dream.msh.org"
     rewrite = (
         (r'^/index/moz', r'http://www.mozilla.org'),
         (r'^/index/google', r'http://google.com'),
@@ -25,6 +25,6 @@ class NormalView(View):
 
     def get(self, request):
         response = HttpResponse()
-        response['Age'] = "Custom Header"
-        return HttpResponse(response['Age'])
+        request.META['Age'] = "Custom Header"
+        return response(request.META['Age'])
         
