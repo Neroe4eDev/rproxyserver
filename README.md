@@ -1,6 +1,6 @@
 ## Django Reverse Proxy Server
 
-Navigate to http://169.48.64.219:8001
+http://169.48.64.219:8001
 
 ## Setting up the django-revproxy librrary
 
@@ -54,3 +54,6 @@ urlpatterns = patterns('',
 )
 ```
 After starting your test server you should see the content of http://example.com/ on http://localhost:8000/.
+
+## How to set up a Linux server for Django
+https://docs.google.com/document/d/1iMpdRmLTFDnEdr0AsrYBVOFdQ48swx5L7e8TQLJrEZE/edit
